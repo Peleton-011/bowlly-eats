@@ -2,9 +2,6 @@
 
 <template>
 	<div>
-		<BaseNavigation />
-		<slot />
+		<NuxtLink to="/">Home</NuxtLink>
 	</div>
 </template>
-
-<style></style>
