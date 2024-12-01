@@ -1,6 +1,5 @@
 <template>
-  <div>
-
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
-  </div>
+	<div class="font-Montserrat container">
+		<h1 class="bg-blue">Hello world!</h1>
+	</div>
 </template>
