@@ -1,10 +1,8 @@
 <script lang="ts" setup></script>
 
 <template>
-	<div>
-		<BaseNavigation />
-		<slot />
-	</div>
+	<BaseNavigation />
+	<slot />
 </template>
 
 <style></style>
