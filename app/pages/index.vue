@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-	<div>
+	<div class="container py-20">
 		<h1>Home Page</h1>
 		<div>
 			<!-- Default -->
