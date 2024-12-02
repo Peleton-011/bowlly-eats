@@ -2,7 +2,7 @@
 import { type RecipeResponse } from "../../types/types";
 const { data, error } = await useFetch<RecipeResponse>(
 	// "/api/recipes"
-	"https://dummyjson.com/products?limit=6"
+	"https://dummyjson.com/recipes?limit=6"
 );
 </script>
 
@@ -49,7 +49,7 @@ const { data, error } = await useFetch<RecipeResponse>(
 				class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8"
 			>
 				<div
-					v-for="recipe in data?.products"
+					v-for="recipe in data?.recipes"
 					class="flex flex-col shadow rounded-md"
 				>
 					<NuxtImg
