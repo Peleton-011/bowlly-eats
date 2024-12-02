@@ -4,6 +4,19 @@ const { data, error } = await useFetch<RecipeResponse>(
 	// "/api/recipes"
 	"https://dummyjson.com/recipes?limit=6"
 );
+
+useSeoMeta({
+	title: "Bowlly Eats",
+	description: "Recipes for you to cook!",
+	ogTitle: "Bowlly Eats",
+	ogDescription: "Recipes for you to cook!",
+	ogImage: "/hero.png",
+	ogUrl: `http:localhost:3000`,
+	twitterTitle: "Bowlly Eats",
+	twitterDescription: "Recipes for you to cook!",
+	twitterImage: "/hero.png",
+	twitterCard: "summary",
+});
 </script>
 
 <template>
