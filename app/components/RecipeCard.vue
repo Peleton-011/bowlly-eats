@@ -41,9 +41,9 @@ defineProps<{
 			</div>
 			<NuxtLink
 				:to="`/recipes/${recipe.id}`"
-				class="px-4 py-2 self-start bg-metallic-blue rounded-md text-base lg:text-lg cursor-pointer font-bold"
+				class="px-4 py-2 self-start bg-metallic-blue rounded-md text-lg cursor-pointer"
 			>
-				View
+				View Recipe
 			</NuxtLink>
 		</div>
 	</div>
