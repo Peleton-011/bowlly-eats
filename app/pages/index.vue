@@ -1,4 +1,10 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+
+const { data: data2, error: error2 } = await useFetch(
+    // "/api/recipes"
+	"https://dummyjson.com/products?limit=6"
+);
+</script>
 
 <template>
 	<main>
