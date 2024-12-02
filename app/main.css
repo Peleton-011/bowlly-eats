@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-chinese-black text-clear;
+  @apply bg-[#16191c] text-clear;
 }

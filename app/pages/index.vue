@@ -2,7 +2,7 @@
 
 <template>
 	<main>
-		<section class="bg-[#282828]">
+		<section class="bg-[#2b2e31]">
 			<div
 				class="container flex flex-col lg:flex-row items-center py-20 gap-10"
 			>
