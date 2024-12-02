@@ -39,12 +39,7 @@ defineProps<{
 					<span>{{ recipe.rating }} ({{ recipe.reviewCount }})</span>
 				</div>
 			</div>
-			<NuxtLink
-				:to="`/recipes/${recipe.id}`"
-				class="px-4 py-2 self-start bg-metallic-blue rounded-md text-lg cursor-pointer"
-			>
-				View Recipe
-			</NuxtLink>
+			<BaseBtn label="View" :to="`/recipes/${recipe.id}`" />
 		</div>
 	</div>
 </template>
