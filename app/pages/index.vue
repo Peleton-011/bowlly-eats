@@ -65,21 +65,21 @@ const { data, error } = await useFetch<RecipeResponse>(
 							{{ recipe.name }}
 						</p>
 						<div
-							class="font-normal w-full bg-white/80 flex gap-8 text-lg lg:text-xl mb-4 mt-auto"
+							class="font-normal w-full bg-[#2b2e31] flex gap-8 text-lg lg:text-xl mb-4 mt-auto pl-5 py-2 rounded-md"
 						>
 							<div class="flex items-center gap-1">
 								<Icon
 									name="mdi:clock-time-eight-outline"
-									style="color: #f79f1a"
+									style="color: #61d095"
 								/>
 								<span>{{ recipe.cookTimeMinutes }}</span>
 							</div>
 							<div class="flex items-center gap-1">
-								<Icon name="mdi:fire" style="color: #f79f1a" />
+								<Icon name="mdi:fire" style="color: #61d095" />
 								<span>{{ recipe.caloriesPerServing }}</span>
 							</div>
 							<div class="flex items-center gap-1">
-								<Icon name="mdi:star" style="color: #f79f1a" />
+								<Icon name="mdi:star" style="color: #61d095" />
 								<span
 									>{{ recipe.rating }} ({{
 										recipe.reviewCount
@@ -89,7 +89,7 @@ const { data, error } = await useFetch<RecipeResponse>(
 						</div>
 						<NuxtLink
 							:to="`/recipes/${recipe.id}`"
-							class="px-4 py-2 text-white self-start bg-dodgeroll-gold rounded-md text-base lg:text-lg cursor-pointer"
+							class="px-4 py-2 self-start bg-metallic-blue rounded-md text-base lg:text-lg cursor-pointer font-bold"
 						>
 							View
 						</NuxtLink>
