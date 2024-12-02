@@ -2,9 +2,7 @@
 export default defineNuxtConfig({
 	compatibilityDate: "2024-11-01",
 
-    css: [ 
-        "~/main.css"
-    ],
+	css: ["~/main.css"],
 
 	future: {
 		compatibilityVersion: 4,
@@ -27,6 +25,10 @@ export default defineNuxtConfig({
 		},
 	},
 
+	image: {
+		domains: ["https://dummyjson.com"],
+	},
+
 	unhead: {
 		renderSSRHeadOptions: {
 			omitLineBreaks: false,
@@ -40,9 +42,9 @@ export default defineNuxtConfig({
 		"@nuxt/image",
 	],
 
-    googleFonts: {
-        families: {
-            Montserrat: true,
-        },
-    },
+	googleFonts: {
+		families: {
+			Montserrat: true,
+		},
+	},
 });
