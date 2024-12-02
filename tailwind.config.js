@@ -6,7 +6,7 @@ export default {
 			colors: {
 				"metallic-blue": "#305979",
 				"chinese-black": "#121212",
-				"emerald": "61D095",
+				"emerald": "#61D095",
                 "clear": "#a2b1c2"
 			},
 		},
