@@ -1,0 +1,125 @@
+[
+    {
+      "id": "1",
+      "name": "Rice",
+      "cooking_time": 20,
+      "cost": 1.8,
+      "instructions": [
+        "Rinse 1 cup of rice under cold water until the water runs clear.",
+        "Bring 2 cups of water to a boil in a medium saucepan.",
+        "Add the rice and a pinch of salt. Reduce heat to low, cover, and simmer for 18-20 minutes.",
+        "Remove from heat and let stand covered for 5 minutes. Fluff with a fork before serving."
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Quinoa",
+      "cooking_time": 15,
+      "cost": 2.5,
+      "instructions": [
+        "Rinse 1 cup of quinoa under cold water in a fine mesh strainer.",
+        "Bring 2 cups of water or broth to a boil in a medium saucepan.",
+        "Add the quinoa, reduce heat to low, cover, and simmer for 15 minutes.",
+        "Remove from heat and let stand covered for 5 minutes. Fluff with a fork before serving."
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Lentils",
+      "cooking_time": 25,
+      "cost": 1.2,
+      "instructions": [
+        "Rinse 1 cup of lentils under cold water and remove any debris or damaged lentils.",
+        "Bring 3 cups of water or broth to a boil in a medium saucepan.",
+        "Add the lentils and reduce the heat to medium-low. Simmer uncovered for 20-25 minutes or until tender.",
+        "Drain any excess water and season as desired."
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Gluten-Free Pasta",
+      "cooking_time": 10,
+      "cost": 3.0,
+      "instructions": [
+        "Bring a large pot of salted water to a boil.",
+        "Add 1 pound of gluten-free pasta and cook according to the package instructions (typically 8-10 minutes).",
+        "Stir occasionally to prevent sticking.",
+        "Drain the pasta and rinse under warm water to remove excess starch. Serve immediately."
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Millet",
+      "cooking_time": 20,
+      "cost": 1.6,
+      "instructions": [
+        "Rinse 1 cup of millet under cold water until the water runs clear.",
+        "Toast the millet in a dry pan over medium heat for 2-3 minutes, stirring frequently, until it smells nutty.",
+        "Bring 2 cups of water or broth to a boil in a medium saucepan.",
+        "Add the toasted millet, reduce heat to low, cover, and simmer for 18-20 minutes.",
+        "Remove from heat and let stand covered for 5 minutes. Fluff with a fork before serving."
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Gluten-Free Couscous",
+      "cooking_time": 5,
+      "cost": 2.8,
+      "instructions": [
+        "Bring 1 cup of water or broth to a boil in a medium saucepan.",
+        "Remove from heat and stir in 1 cup of gluten-free couscous.",
+        "Cover and let sit for 5 minutes to absorb the liquid.",
+        "Fluff with a fork before serving."
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Polenta",
+      "cooking_time": 30,
+      "cost": 1.5,
+      "instructions": [
+        "Bring 4 cups of water or broth to a boil in a medium saucepan.",
+        "Gradually whisk in 1 cup of polenta in a steady stream to prevent clumping.",
+        "Reduce the heat to low and simmer, stirring frequently, for 25-30 minutes until the polenta is thick and creamy.",
+        "Season with salt and optional butter or olive oil before serving."
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Sweet Potatoes",
+      "cooking_time": 45,
+      "cost": 3.0,
+      "instructions": [
+        "Preheat oven to 400°F (200°C).",
+        "Wash and scrub 1 medium sweet potato per serving. Poke several holes in each potato with a fork.",
+        "Place the sweet potatoes on a baking sheet and bake for 45-50 minutes or until tender when pierced with a fork.",
+        "Slice open and serve as desired."
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Spaghetti Squash",
+      "cooking_time": 40,
+      "cost": 4.0,
+      "instructions": [
+        "Preheat oven to 400°F (200°C).",
+        "Cut 1 spaghetti squash in half lengthwise and scoop out the seeds.",
+        "Place the halves cut-side down on a baking sheet lined with parchment paper.",
+        "Bake for 35-40 minutes or until the flesh is tender and easily shredded with a fork.",
+        "Use a fork to scrape out the spaghetti-like strands and serve."
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Cauliflower Rice",
+      "cooking_time": 5,
+      "cost": 2.0,
+      "instructions": [
+        "Grate 1 head of cauliflower or pulse florets in a food processor until they resemble rice.",
+        "Heat 1 tablespoon of oil in a large skillet over medium heat.",
+        "Add the cauliflower rice and cook for 5-7 minutes, stirring occasionally, until tender.",
+        "Season as desired and serve."
+      ]
+    }
+  ]
+  
