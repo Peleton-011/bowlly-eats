@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import DynamicRecipe from "~/components/DynamicRecipe.vue";
 import { type Recipe } from "../../types/types";
 const { data: recipes, error } = await useFetch<Recipe[]>("/api/recipes");
 
