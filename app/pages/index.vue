@@ -1,14 +1,7 @@
 <script lang="ts" setup>
 import DynamicRecipe from "~/components/DynamicRecipe.vue";
-import { type RecipeResponse } from "../../types/types";
-const { data, error } = await useFetch<RecipeResponse>(
-	// "/api/recipes"
-	"https://dummyjson.com/recipes?limit=6"
-);
-
-const { data: data2, error: error2 } = await useFetch<any>(
-     "/api/recipes"
-);
+import { type Recipe } from "../../types/types";
+const { data: recipes, error } = await useFetch<Recipe[]>("/api/recipes");
 
 useSeoMeta({
 	title: "Bowlly Eats",
@@ -66,8 +59,7 @@ useSeoMeta({
 				v-if="!error"
 				class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8"
 			>
-				<RecipeCard v-for="recipe in data?.recipes" :recipe="recipe" />
-                <DynamicRecipe v-for="recipe2 in data2" :recipe="recipe2" />
+				<RecipeCard v-for="recipe in recipes" :recipe="recipe" />
 			</div>
 			<p v-else class="text-xl">
 				Oops, something went wrong. Please try again later
