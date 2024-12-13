@@ -1,7 +1,7 @@
 [
     {
       "id": "1",
-      "title": "Rice & Veggie Stir-Fry with Protein",
+      "name": "Rice & Veggie Stir-Fry with Protein",
       "description": "A stir-fry made with rice, vegetables, and your choice of protein. It’s quick, customizable, and great for leftovers.",
       "servings": 4,
       "ingredients": [
@@ -28,11 +28,14 @@
         "Add mixed vegetables and stir-fry until tender-crisp.",
         "Stir in cooked base and gluten-free soy sauce. Mix thoroughly and serve."
       ],
-      "approximate_cost": { "min": 6.0, "max": 9.0 }
+      "approximate_cost": { "min": 6.0, "max": 9.0 },
+      "cost": 7.5,
+      "cookTimeMinutes": 25,
+      "caloriesPerServing": 400
     },
     {
       "id": "2",
-      "title": "Stuffed Sweet Potatoes with Beans and Veggies",
+      "name": "Stuffed Sweet Potatoes with Beans and Veggies",
       "description": "Baked sweet potatoes filled with a savory mix of beans, vegetables, and optional toppings.",
       "servings": 4,
       "ingredients": [
@@ -52,11 +55,14 @@
         "Slice open the baked sweet potatoes and fill with the bean and veggie mixture.",
         "Top with optional avocado or additional toppings if desired."
       ],
-      "approximate_cost": { "min": 6.0, "max": 7.5 }
+      "approximate_cost": { "min": 6.0, "max": 7.5 },
+      "cost": 6.8,
+      "cookTimeMinutes": 40,
+      "caloriesPerServing": 350
     },
     {
       "id": "3",
-      "title": "One-Pan Roasted Veggies & Chickpeas",
+      "name": "One-Pan Roasted Veggies & Chickpeas",
       "description": "A simple sheet-pan meal with roasted veggies and chickpeas, served over rice or greens.",
       "servings": 4,
       "ingredients": [
@@ -72,11 +78,14 @@
         "Roast for 30-40 minutes, stirring halfway, until veggies are tender and slightly crispy.",
         "Serve over prepared base or on its own."
       ],
-      "approximate_cost": { "min": 6.0, "max": 7.0 }
+      "approximate_cost": { "min": 6.0, "max": 7.0 },
+      "cost": 6.5,
+      "cookTimeMinutes": 45,
+      "caloriesPerServing": 300
     },
     {
       "id": "4",
-      "title": "Lentil & Veggie Stew",
+      "name": "Lentil & Veggie Stew",
       "description": "A hearty, comforting stew with lentils and vegetables, perfect for leftovers.",
       "servings": 4,
       "ingredients": [
@@ -94,7 +103,10 @@
         "Add lentils, diced tomatoes, vegetable broth, and spices. Simmer for 30-40 minutes until lentils are tender.",
         "Add quick-cooking greens in the last 10 minutes if desired. Adjust seasoning to taste and serve warm."
       ],
-      "approximate_cost": { "min": 7.0, "max": 7.0 }
+      "approximate_cost": { "min": 7.0, "max": 7.0 },
+      "cost": 7.0,
+      "cookTimeMinutes": 50,
+      "caloriesPerServing": 250
     }
   ]
   
