@@ -1,6 +1,6 @@
 <template>
 	<div v-if="recipe && baseDetails">
-		<h1>{{ recipe.title }}</h1>
+		<h1>{{ recipe.name }}</h1>
 		<p>{{ recipe.description }}</p>
 
 		<h3>Ingredients</h3>
