@@ -27,6 +27,13 @@ export interface Base {
 	instructions: string[];
 }
 
+export interface Ingredient {
+	name: string;
+	quantity?: string;
+	type?: string;
+	options?: Ingredient[];
+}
+
 export interface RecipeResponse {
 	recipes: Recipe[];
 	total: number;
