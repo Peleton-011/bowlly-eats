@@ -2,7 +2,7 @@ export interface Recipe {
 	id: number;
 	name: string;
 	ingredients: any[];
-    description?: string;
+	description?: string;
 	instructions: string[];
 	prepTimeMinutes?: number;
 	cookTimeMinutes?: number;
@@ -16,6 +16,15 @@ export interface Recipe {
 	rating?: number;
 	reviewCount?: number;
 	mealType?: string[];
+	cost?: number;
+}
+
+export interface Base {
+	id: number;
+	name: string;
+	cooking_time: number;
+	cost: number;
+	instructions: string[];
 }
 
 export interface RecipeResponse {
