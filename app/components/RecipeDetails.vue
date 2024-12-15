@@ -1,5 +1,60 @@
+<script lang="ts" setup>
+import { computed, ref, watch } from "vue";
+import { type Recipe, type Base } from "../../types/types";
+
+// Props
+const { recipe, base } = defineProps<{
+	recipe: Recipe;
+	base: Base;
+}>();
+
+// Reactive State
+const selectedBase = ref<string>(base?.name || "");
+
+// Computed Properties
+const displayedIngredients = computed(() => {
+	if (!recipe || !base) return [];
+
+	return recipe.ingredients.map((ingredient) => {
+		if (ingredient.type === "base" && base) {
+			return base;
+		}
+		return ingredient;
+	});
+});
+
+const displayedInstructions = computed(() => {
+	if (!recipe || !base) return [];
+
+	const baseInstructions = selectedBase.value
+		? base?.instructions || []
+		: [];
+
+	return recipe.instructions
+		.map((step) =>
+			step.includes("following its specific instructions")
+				? step.replace(
+						"its specific instructions",
+						`the instructions for ${selectedBase.value}`
+				  )
+				: step
+		)
+		.concat(baseInstructions);
+});
+
+// Method to update base
+const updateBase = (newBase: string) => {
+	selectedBase.value = newBase;
+};
+
+// Watcher for Side Effects (if needed)
+watch(selectedBase, (newVal) => {
+	console.log(`Selected base changed to: ${newVal}`);
+});
+</script>
+
 <template>
-	<div v-if="recipe && baseDetails">
+	<div class="recipe-details">
 		<h1>{{ recipe.name }}</h1>
 		<p>{{ recipe.description }}</p>
 
@@ -20,62 +75,11 @@
 			</li>
 		</ol>
 
-		<BaseSelector
-			v-if="baseDetails"
-			:options="baseDetails"
-			v-model="selectedBase"
-		/>
-	</div>
-	<div v-else>
-		<p>Loading recipe...</p>
+		<!-- <BaseSelector
+			v-if="recipe.baseOptions"
+			:options=""
+			:selectedBase="selectedBase"
+			@update="updateBase"
+		/> -->
 	</div>
 </template>
-
-<script>
-export default {
-	props: {
-		recipe: { type: Object, required: true },
-		baseDetails: { type: Object, required: true },
-	},
-	data() {
-		return {
-			selectedBase: this.baseDetails
-				? this.baseDetails[0]
-				: null,
-		};
-	},
-	computed: {
-		displayedIngredients() {
-			const baseIngredient = {
-				name: this.selectedBase,
-				...this.baseDetails[this.selectedBase],
-			};
-			return this.recipe.ingredients.map((ingredient) => {
-				if (ingredient.type === "base") {
-					return baseIngredient;
-				}
-				return ingredient;
-			});
-		},
-		displayedInstructions() {
-			const baseInstructions =
-				this.baseDetails[this.selectedBase]?.instructions || [];
-			return this.recipe.instructions
-				.map((step) =>
-					step.includes("following its specific instructions")
-						? step.replace(
-								"its specific instructions",
-								`the instructions for ${this.selectedBase}`
-						  )
-						: step
-				)
-				.concat(baseInstructions);
-		},
-	},
-	methods: {
-		updateBase(newBase) {
-			this.selectedBase = newBase;
-		},
-	},
-};
-</script>

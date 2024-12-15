@@ -34,7 +34,10 @@ defineProps<{
 					<Icon name="mdi:fire" style="color: #61d095" />
 					<span>{{ recipe.caloriesPerServing }}</span>
 				</div>
-				<div class="flex items-center gap-1">
+				<div
+					v-if="recipe.rating && recipe.reviewCount"
+					class="flex items-center gap-1"
+				>
 					<Icon name="mdi:star" style="color: #61d095" />
 					<span>{{ recipe.rating }} ({{ recipe.reviewCount }})</span>
 				</div>
