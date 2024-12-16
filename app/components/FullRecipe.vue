@@ -32,7 +32,7 @@ const updateBase = (event: Event) => {
 
 <template>
 	<div class="flex flex-col max-w-screen-lg container py-20">
-		<RecipeDetails :recipe="recipe" :base="selectedBase" />
+		<!-- <RecipeDetails :recipe="recipe" :base="selectedBase" /> -->
 
 		<!-- Header and other existing sections remain the same -->
 
