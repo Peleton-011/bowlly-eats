@@ -38,9 +38,15 @@ watchEffect(async () => {
 
 <template>
 	<section class="py-20 container">
-		<h2 class="text-3xl lg:text-5xl mb-2">Discover, Create, Share</h2>
 		<div class="flex justify-between">
-			<p class="text-lg lg:text-xl mb-4">
+			<h2 class="text-3xl lg:text-5xl mb-2">Discover, Create, Share</h2>
+			<div class="flex gap-4 mb-6">
+				<button class="btn" @click="pageBackward">{{ "\<" }}</button>
+				<button class="btn" @click="pageForward">{{ "\>" }}</button>
+			</div>
+		</div>
+		<div class="flex justify-between">
+			<p class="text-lg lg:text-xl mb-8">
 				Check out our most popular recipes! We have something for
 				everyone
 			</p>
@@ -48,10 +54,6 @@ watchEffect(async () => {
 				Showing recipes {{ startingIndex.value + 1 }} to
 				{{ startingIndex.value + pageLength }}</span
 			>
-		</div>
-		<div class="flex justify-end gap-4 mb-4">
-			<button class="btn" @click="pageBackward">{{ "\<" }}</button>
-			<button class="btn" @click="pageForward">{{ "\>" }}</button>
 		</div>
 		<div
 			v-if="!error"
