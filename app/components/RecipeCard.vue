@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { type Recipe } from "../../types/types";
-
+const img = useImage();
 defineProps<{
 	recipe: Recipe;
 }>();
@@ -15,6 +15,8 @@ defineProps<{
 			densities="x1"
 			alt=""
 			class="rounded-md aspect-square object-cover"
+			:quality="50"
+			:placeholder="img(`loading.svg`)"
 		/>
 		<div class="flex flex-col py-6 px-4 flex-1">
 			<p class="text-xl lg:text-2xl font-semibold mb-2">
