@@ -1,6 +1,27 @@
 <script lang="ts" setup>
-import { type Recipe } from "../../types/types";
-const { data: recipes, error } = await useFetch<Recipe[]>("/api/recipes");
+const pageLength = 12;
+
+const currentRecipe = ref(0);
+
+
+function pageForward() {
+	currentRecipe.value += Number(pageLength);
+    console.log(currentRecipe.value);
+}
+function pageBackward() {
+	if (currentRecipe.value < pageLength) {
+		currentRecipe.value = 0;
+		return;
+	}
+	currentRecipe.value -= Number(pageLength);
+}
+
+const options = {
+	startingIndex: currentRecipe,
+	pageLength,
+	pageBackward,
+	pageForward,
+};
 
 useSeoMeta({
 	title: "Bowlly Eats",
@@ -49,21 +70,8 @@ useSeoMeta({
 				</div>
 			</div>
 		</section>
-		<section class="py-20 container">
-			<h2 class="text-3xl lg:text-5xl mb-2">Discover, Create, Share</h2>
-			<p class="text-lg lg:text-xl mb-8">
-				Check out our most popular recipes!
-			</p>
-			<div
-				v-if="!error"
-				class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8"
-			>
-				<RecipeCard v-for="recipe in recipes" :recipe="recipe" />
-			</div>
-			<p v-else class="text-xl">
-				Oops, something went wrong. Please try again later
-			</p>
-		</section>
+
+		<RecipeList v-bind="options" />
 	</main>
 </template>
 
