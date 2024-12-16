@@ -1,67 +1,42 @@
 <script lang="ts" setup>
+import { ref, computed } from "vue";
 import { type Recipe, type Base } from "../../types/types";
 import commonBases from "../../assets/common_bases.json";
 
-defineProps<{
+const props = defineProps<{
 	recipe: Recipe;
 }>();
+
+// Create a reactive reference for the selected base
+const selectedBase = ref<Base>(commonBases?.[0] as Base);
+
+// Compute instructions based on the selected base
+const dynamicInstructions = computed(() => {
+	// Start with the base-specific instructions
+	const baseInstructions = selectedBase.value.instructions || [];
+
+	// Combine base instructions with the original recipe instructions
+	return [...baseInstructions, ...props.recipe.instructions];
+});
+
+// Function to update the selected base
+const updateBase = (event: Event) => {
+	const target = event.target as HTMLSelectElement;
+	const baseName = target.value;
+	const foundBase = commonBases.find((base) => base.name === baseName);
+	if (foundBase) {
+		selectedBase.value = foundBase;
+	}
+};
 </script>
 
 <template>
 	<div class="flex flex-col max-w-screen-lg container py-20">
-		<RecipeDetails :recipe="recipe" :base="commonBases[0] as Base" />
-		<pre>
-			{{ JSON.stringify(recipe, null, 2) }}
-		</pre
-		>
-		<!-- Header -->
-		<div class="flex flex-col mb-6">
-			<h2 class="text-5xl mb-4 font-semibold">{{ recipe.name }}</h2>
-			<div class="flex gap-4 text-xl mb-6">
-				<div class="flex items-center gap-1">
-					<Icon
-						name="mdi:clock-time-eight-outline"
-						style="color: #f79f1a"
-					/>
-					<span>{{ recipe.cookTimeMinutes }}</span>
-				</div>
-				<div class="flex items-center gap-1">
-					<Icon name="mdi:fire" style="color: #f79f1a" />
-					<span>{{ recipe.caloriesPerServing }}</span>
-				</div>
-				<div
-					v-if="recipe.rating && recipe.reviewCount"
-					class="flex items-center gap-1"
-				>
-					<Icon name="mdi:star" style="color: #f79f1a" />
-					<span>{{ recipe.rating }} ({{ recipe.reviewCount }})</span>
-				</div>
-				<div v-if="recipe.cost" class="flex items-center gap-1">
-					<Icon name="mdi:star" style="color: #f79f1a" />
-					<span>{{ recipe.cost }}€ </span>
-				</div>
-			</div>
-			<hr />
-		</div>
+		<RecipeDetails :recipe="recipe" :base="selectedBase" />
 
-		<!-- Image -->
-		<NuxtImg
-			:src="recipe.image"
-			densities="x1"
-			sizes="xs:100vw sm:100vw md:100vw lg:100vw"
-			class="w-full max-h-[500px] object-cover rounded-md shadow-sm mb-12"
-			alt=""
-		/>
+		<!-- Header and other existing sections remain the same -->
 
-		<!-- Description -->
-		<div v-if="recipe.description" class="mb-8">
-			<h2 class="text-3xl font-semibold mb-4">Description</h2>
-			<p class="text-lg">
-				{{ recipe.description }}
-			</p>
-		</div>
-
-		<!-- Ingredients -->
+		<!-- Ingredients Section with Base Selection -->
 		<div class="mb-8">
 			<h2 class="text-3xl font-semibold mb-4">Ingredients</h2>
 			<ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-lg">
@@ -74,17 +49,35 @@ defineProps<{
 
 						<span class="peer-checked:line-through">
 							<select
-								v-if="ingredient.options"
-								name=""
-								id=""
-								class="bg-inherit"
+								v-if="
+									ingredient.options &&
+									ingredient.type === 'base'
+								"
+								@change="updateBase($event)"
+								class="bg-inherit decoration-inherit"
 							>
 								<option
 									v-for="option in ingredient.options"
-									:key="option.name"
-									:value="option.name"
+									:key="String(option)"
+									:value="option"
+									class="decoration-inherit"
 								>
-									{{ option.name }}
+									{{ option }}
+								</option>
+							</select>
+							<select
+								v-else-if="ingredient.options"
+								name=""
+								id=""
+								class="bg-inherit decoration-inherit"
+							>
+								<option
+									v-for="option in ingredient.options"
+									:key="option.name || String(option)"
+									:value="option.name || option"
+									class="decoration-inherit"
+								>
+									{{ option.name || option }}
 									<span v-if="option.quantity"
 										>({{ option.quantity }})</span
 									>
@@ -107,7 +100,7 @@ defineProps<{
 			<h2 class="text-3xl font-medium mb-4">Instructions</h2>
 			<ul class="flex flex-col text-lg gap-4">
 				<li
-					v-for="(instruction, index) in recipe.instructions"
+					v-for="(instruction, index) in dynamicInstructions"
 					class="flex gap-2"
 				>
 					<span
