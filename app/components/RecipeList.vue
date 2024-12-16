@@ -41,8 +41,18 @@ watchEffect(async () => {
 		<div class="flex justify-between">
 			<h2 class="text-3xl lg:text-5xl mb-2">Discover, Create, Share</h2>
 			<div class="flex gap-4 mb-6">
-				<button class="btn" @click="pageBackward">{{ "\<" }}</button>
-				<button class="btn" @click="pageForward">{{ "\>" }}</button>
+				<button
+					class="btn px-4 py-2 self-start bg-metallic-blue rounded-md text-base lg:text-lg cursor-pointer font-bold"
+					@click="pageBackward"
+				>
+					{{ "\<" }}
+				</button>
+				<button
+					class="btn px-4 py-2 self-start bg-metallic-blue rounded-md text-base lg:text-lg cursor-pointer font-bold"
+					@click="pageForward"
+				>
+					{{ "\>" }}
+				</button>
 			</div>
 		</div>
 		<div class="flex justify-between">
@@ -66,9 +76,3 @@ watchEffect(async () => {
 		</p>
 	</section>
 </template>
-
-<style>
-.btn {
-	@apply px-4 py-2 self-start bg-metallic-blue rounded-md text-base lg:text-lg cursor-pointer font-bold;
-}
-</style>
