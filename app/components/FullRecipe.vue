@@ -71,8 +71,31 @@ defineProps<{
 						<div
 							class="relative w-6 h-6 rounded-full border-2 border-metallic-blue flex items-center justify-center peer-checked:after:absolute peer-checked:after:w-4 peer-checked:after:h-4 peer-checked:after:bg-metallic-blue peer-checked:after:rounded-full"
 						></div>
+
 						<span class="peer-checked:line-through">
-							{{ ingredient.name }}
+							<select
+								v-if="ingredient.options"
+								name=""
+								id=""
+								class="bg-inherit"
+							>
+								<option
+									v-for="option in ingredient.options"
+									:key="option.name"
+									:value="option.name"
+								>
+									{{ option.name }}
+									<span v-if="option.quantity"
+										>({{ option.quantity }})</span
+									>
+								</option>
+							</select>
+							<div v-else>
+								{{ ingredient.name }}
+								<span v-if="ingredient.quantity"
+									>({{ ingredient.quantity }})</span
+								>
+							</div>
 						</span>
 					</label>
 				</li>

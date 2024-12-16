@@ -6,7 +6,36 @@
 		"servings": 4,
 		"image": "https://images.pexels.com/photos/24334865/pexels-photo-24334865/free-photo-of-rice-on-plate.jpeg",
 		"ingredients": [
-			{ "name": "Base", "type": "base", "options": ["Rice", "Quinoa"] },
+			{
+				"name": "Base",
+				"type": "base",
+				"options": [
+					{
+						"id": 1,
+						"name": "Rice",
+						"cooking_time": 20,
+						"cost": 1.8,
+						"instructions": [
+							"Rinse 1 cup of rice under cold water until the water runs clear.",
+							"Bring 2 cups of water to a boil in a medium saucepan.",
+							"Add the rice and a pinch of salt. Reduce heat to low, cover, and simmer for 18-20 minutes.",
+							"Remove from heat and let stand covered for 5 minutes. Fluff with a fork before serving."
+						]
+					},
+					{
+						"id": 2,
+						"name": "Quinoa",
+						"cooking_time": 15,
+						"cost": 2.5,
+						"instructions": [
+							"Rinse 1 cup of quinoa under cold water in a fine mesh strainer.",
+							"Bring 2 cups of water or broth to a boil in a medium saucepan.",
+							"Add the quinoa, reduce heat to low, cover, and simmer for 15 minutes.",
+							"Remove from heat and let stand covered for 5 minutes. Fluff with a fork before serving."
+						]
+					}
+				]
+			},
 			{ "name": "Mixed Vegetables", "quantity": "4 cups", "cost": 4.0 },
 			{
 				"name": "Protein",
@@ -93,7 +122,30 @@
 				"quantity": "salt, pepper, paprika, garlic powder",
 				"cost": 0.2
 			},
-			{ "name": "Base", "type": "base", "options": ["Rice", "Quinoa"] }
+			{ "name": "Base", "type": "base", "options": [	{
+                "id": 1,
+                "name": "Rice",
+                "cooking_time": 20,
+                "cost": 1.8,
+                "instructions": [
+                    "Rinse 1 cup of rice under cold water until the water runs clear.",
+                    "Bring 2 cups of water to a boil in a medium saucepan.",
+                    "Add the rice and a pinch of salt. Reduce heat to low, cover, and simmer for 18-20 minutes.",
+                    "Remove from heat and let stand covered for 5 minutes. Fluff with a fork before serving."
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Quinoa",
+                "cooking_time": 15,
+                "cost": 2.5,
+                "instructions": [
+                    "Rinse 1 cup of quinoa under cold water in a fine mesh strainer.",
+                    "Bring 2 cups of water or broth to a boil in a medium saucepan.",
+                    "Add the quinoa, reduce heat to low, cover, and simmer for 15 minutes.",
+                    "Remove from heat and let stand covered for 5 minutes. Fluff with a fork before serving."
+                ]
+            }] }
 		],
 		"instructions": [
 			"Preheat oven to 400°F (200°C). Spread chopped vegetables and chickpeas on a baking sheet.",
