@@ -1,5 +1,9 @@
 import data from "@/../assets/recipes.json";
-import { type Recipe } from "../../../types/types";
+import {
+	Ingredient,
+	Recipe,
+	type SingleRecipeResponse,
+} from "../../../types/types";
 
 export default defineEventHandler(async (event) => {
 	const id = getRouterParam(event, "id");
@@ -11,11 +15,21 @@ export default defineEventHandler(async (event) => {
 	if (Number(id) > data.length) {
 		try {
 			// Use $fetch for server-side fetching
-			const externalRecipe: Recipe = await globalThis.$fetch(
-				`https://dummyjson.com/recipes/${Number(id) - data.length}`
-			);
+			const externalRecipe =
+				await globalThis.$fetch<SingleRecipeResponse>(
+					`https://dummyjson.com/recipes/${Number(id) - data.length}`
+				);
 
-			return { ...externalRecipe, id: Number(id) }; // Return the external recipe
+			return {
+				...externalRecipe,
+				id: Number(id),
+				ingredients: externalRecipe.ingredients.map(
+					(ingredient) =>
+						({
+							name: ingredient,
+						} as Ingredient)
+				),
+			} as Recipe; // Return the external recipe
 		} catch (error) {
 			// Handle fetch errors gracefully
 			throw createError({

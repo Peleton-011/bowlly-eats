@@ -1,5 +1,5 @@
 import data from "@/../assets/recipes.json";
-import { type Recipe } from "../../../types/types";
+import { Ingredient, type Recipe } from "../../../types/types";
 import { type RecipeResponse } from "../../../types/types";
 
 export default defineEventHandler(async () => {
@@ -18,6 +18,12 @@ export default defineEventHandler(async () => {
 		externalRecipes = fetchedResponse.recipes.map((recipe, index) => ({
 			...recipe,
 			id: internalRecipes.length + index + 1, // Assign ID sequentially after internal recipes
+			ingredients: recipe.ingredients.map(
+				(ingredient) =>
+					({
+						name: ingredient,
+					} as Ingredient)
+			),
 		}));
 	} catch (error) {
 		console.error("Error fetching external recipes:", error);

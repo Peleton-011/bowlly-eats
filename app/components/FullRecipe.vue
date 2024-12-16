@@ -72,7 +72,7 @@ defineProps<{
 							class="relative w-6 h-6 rounded-full border-2 border-metallic-blue flex items-center justify-center peer-checked:after:absolute peer-checked:after:w-4 peer-checked:after:h-4 peer-checked:after:bg-metallic-blue peer-checked:after:rounded-full"
 						></div>
 						<span class="peer-checked:line-through">
-							{{ ingredient }}
+							{{ ingredient.name }}
 						</span>
 					</label>
 				</li>
