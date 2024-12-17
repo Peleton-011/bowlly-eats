@@ -36,6 +36,17 @@ const updateBase = (event: Event) => {
 
 		<!-- Header and other existing sections remain the same -->
 
+        <!-- Image Section -->
+        <div class="mb-8">
+            <NuxtImg 
+                :src="recipe.image"
+                :alt="recipe.name"
+                format="webp"
+                sizes="xs:100vw sm:50vw lg:400px"
+                class="rounded-md aspect-square object-cover"
+                :quality="50"
+            />
+        </div>
 		<!-- Ingredients Section with Base Selection -->
 		<div class="mb-8">
 			<h2 class="text-3xl font-semibold mb-4">Ingredients</h2>
