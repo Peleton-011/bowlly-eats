@@ -31,7 +31,6 @@
 			{ "name": "Ginger", "quantity": "optional, minced", "cost": 0.25 }
 		],
 		"instructions": [
-			"Prepare the base ingredient following its specific instructions.",
 			"In a large skillet or wok, heat olive oil and sauté garlic and ginger if using.",
 			"Cook protein of choice until done. For eggs, scramble separately and set aside.",
 			"Add mixed vegetables and stir-fry until tender-crisp.",
@@ -67,7 +66,7 @@
 			}
 		],
 		"instructions": [
-			"Bake sweet potatoes following their specific instructions.",
+			"Bake sweet potatoes until tender (around 25-30 minutes at 350°F).",
 			"In a skillet, heat olive oil and sauté diced bell pepper until softened.",
 			"Add black beans, corn, salsa, and spices. Cook until warmed through.",
 			"Slice open the baked sweet potatoes and fill with the bean and veggie mixture.",
@@ -134,7 +133,6 @@
 			}
 		],
 		"instructions": [
-			"Prepare lentils according to their specific instructions.",
 			"In a large pot, heat olive oil and sauté onions, celery, and carrots until softened.",
 			"Add lentils, diced tomatoes, vegetable broth, and spices. Simmer for 30-40 minutes until lentils are tender.",
 			"Add quick-cooking greens in the last 10 minutes if desired. Adjust seasoning to taste and serve warm."
